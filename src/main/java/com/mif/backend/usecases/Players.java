@@ -1,6 +1,6 @@
-package backend.usecases;
+package com.mif.backend.usecases;
 
-import backend.entities.Player;
+import com.mif.backend.entities.Player;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
