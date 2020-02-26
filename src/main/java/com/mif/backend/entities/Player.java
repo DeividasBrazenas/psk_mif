@@ -7,6 +7,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Player.findAll", query = "select a from Player as a")
+})
 @Table(name = "PLAYER")
 public class Player implements Serializable {
     @Id
