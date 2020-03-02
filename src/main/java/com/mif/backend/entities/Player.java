@@ -12,6 +12,14 @@ import java.io.Serializable;
 })
 @Table(name = "PLAYER")
 public class Player implements Serializable {
+    public Player(){
+    }
+
+    public Player(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter @Setter
@@ -23,11 +31,8 @@ public class Player implements Serializable {
     @Getter @Setter
     private String lastName;
 
-    public Player(){
-    }
-
-    public Player(String firstName, String lastName){
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+    @ManyToOne
+    @JoinColumn(name = "SPONSOR_ID")
+    @Getter @Setter
+    private Sponsor sponsor;
 }
