@@ -11,17 +11,17 @@
                         password="sa">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="debr.persistence.mybatis.model" targetProject="MAVEN" />
+        <javaModelGenerator targetPackage="debr.persistence.mybatis.model" targetProject="MAVEN"/>
 
-        <sqlMapGenerator targetPackage="debr.usecases.mybatis.xml" targetProject="MAVEN" />
-        <javaClientGenerator type="XMLMAPPER" targetPackage="debr.mybatis.dao" targetProject="MAVEN" />
+        <sqlMapGenerator targetPackage="debr.usecases.mybatis.xml" targetProject="MAVEN"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="debr.mybatis.dao" targetProject="MAVEN"/>
 
 
         <table schema="public" tableName="sponsor">
-            <generatedKey column="id" identity="true" sqlStatement="JDBC" />
+            <generatedKey column="id" identity="true" sqlStatement="JDBC"/>
         </table>
         <table schema="public" tableName="player">
-            <generatedKey column="id" identity="true" sqlStatement="JDBC" />
+            <generatedKey column="id" identity="true" sqlStatement="JDBC"/>
         </table>
     </context>
 </generatorConfiguration>
