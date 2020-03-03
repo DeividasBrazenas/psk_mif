@@ -13,7 +13,7 @@
 
         <javaModelGenerator targetPackage="debr.myBatis.model" targetProject="MAVEN"/>
 
-        <sqlMapGenerator targetPackage="debr.usecases.mybatis.xml" targetProject="MAVEN"/>
+        <sqlMapGenerator targetPackage="debr.usecases.myBatis.xml" targetProject="MAVEN"/>
         <javaClientGenerator type="XMLMAPPER" targetPackage="debr.myBatis.dao" targetProject="MAVEN"/>
 
 

@@ -10,12 +10,14 @@
     <h2>Sponsors:</h2>
     <ol>
         <ui:repeat value="#{sponsors.sponsors}" var="sponsor">
-            <li><h:link value="#{sponsor.name}" outcome="players?sponsorId=#{sponsor.id}" /></li>
+            <li><h:link value="#{sponsor.name}" outcome="players?sponsorId=#{sponsor.id}"/></li>
         </ui:repeat>
     </ol>
     <h:form>
         <h:inputText value="#{sponsors.sponsorToCreate.name}" required="true"/>
         <h:commandButton value="Add new sponsor" action="#{sponsors.createSponsor}"/>
+        <h:link outcome="myBatis/sponsors" value="MyBatis implementation "/>
     </h:form>
+    <h:link outcome="index" value="Back to sponsors page"/>
 </h:body>
 </html>

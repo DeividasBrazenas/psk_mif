@@ -4,19 +4,19 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="debr.mybatis.model.Sponsor" alias="Sponsor"/>
-        <typeAlias type="devr.mybatis.model.Player" alias="Player"/>
+        <typeAlias type="debr.myBatis.model.Sponsor" alias="Sponsor"/>
+        <typeAlias type="debr.myBatis.model.Player" alias="Player"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
             <transactionManager type="MANAGED"/>
             <dataSource type="JNDI">
-                <property name="data_source" value="openejb:Resource/TennisDataSource"/>
+                <property name="data_source" value="TennisDataSource"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mybatis.xml/SponsorMapper.xml"/>
-        <mapper resource="mybatis.xml/PlayerMapper.xml"/>
+        <mapper resource="myBatis.xml/SponsorMapper.xml"/>
+        <mapper resource="myBatis.xml/PlayerMapper.xml"/>
     </mappers>
 </configuration>
