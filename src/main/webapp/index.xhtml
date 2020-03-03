@@ -7,16 +7,15 @@
 <h:head/>
 
 <h:body>
-    <h2>Players:</h2>
+    <h2>Sponsors:</h2>
     <ol>
-        <ui:repeat value="#{players.players}" var="player">
-            <li>#{player.firstName} #{player.lastName}</li>
+        <ui:repeat value="#{sponsors.sponsors}" var="sponsor">
+            <li><h:link value="#{sponsor.name}" outcome="players?sponsorId=#{sponsor.id}" /></li>
         </ui:repeat>
     </ol>
     <h:form>
-        <h:inputText value="#{players.playerToCreate.firstName}" required="true"/>
-        <h:inputText value="#{players.playerToCreate.lastName}" required="true"/>
-        <h:commandButton value="Add new player" action="#{players.createPlayer}"/>
+        <h:inputText value="#{sponsors.sponsorToCreate.name}" required="true"/>
+        <h:commandButton value="Add new sponsor" action="#{sponsors.createSponsor}"/>
     </h:form>
 </h:body>
 </html>
