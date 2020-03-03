@@ -1,5 +1,6 @@
 package com.mif.backend.entities;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,13 +12,10 @@ import java.io.Serializable;
         @NamedQuery(name = "Player.findAll", query = "select a from Player as a")
 })
 @Table(name = "PLAYER")
+@Getter @Setter
+@EqualsAndHashCode(of={"id"})
 public class Player implements Serializable {
     public Player(){
-    }
-
-    public Player(String firstName, String lastName){
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     @Id
