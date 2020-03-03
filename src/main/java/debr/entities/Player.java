@@ -1,4 +1,4 @@
-package com.mif.backend.entities;
+package debr.entities;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

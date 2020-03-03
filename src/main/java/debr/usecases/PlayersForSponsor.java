@@ -1,9 +1,9 @@
-package com.mif.backend.usecases;
+package debr.usecases;
 
-import com.mif.backend.entities.Player;
-import com.mif.backend.entities.Sponsor;
-import com.mif.backend.persistence.PlayersDAO;
-import com.mif.backend.persistence.SponsorsDAO;
+import debr.entities.Player;
+import debr.entities.Sponsor;
+import debr.persistence.PlayersDAO;
+import debr.persistence.SponsorsDAO;
 import lombok.Getter;
 import lombok.Setter;
 

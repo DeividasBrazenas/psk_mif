@@ -1,7 +1,7 @@
-package com.mif.backend.usecases;
+package debr.usecases;
 
-import com.mif.backend.entities.Sponsor;
-import com.mif.backend.persistence.SponsorsDAO;
+import debr.entities.Sponsor;
+import debr.persistence.SponsorsDAO;
 import lombok.Getter;
 import lombok.Setter;
 

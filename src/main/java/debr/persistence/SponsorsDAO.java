@@ -1,6 +1,6 @@
-package com.mif.backend.persistence;
+package debr.persistence;
 
-import com.mif.backend.entities.Sponsor;
+import debr.entities.Sponsor;
 import lombok.Setter;
 
 import javax.enterprise.context.ApplicationScoped;

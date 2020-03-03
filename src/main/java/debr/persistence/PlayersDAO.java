@@ -1,6 +1,6 @@
-package com.mif.backend.persistence;
+package debr.persistence;
 
-import com.mif.backend.entities.Player;
+import debr.entities.Player;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
