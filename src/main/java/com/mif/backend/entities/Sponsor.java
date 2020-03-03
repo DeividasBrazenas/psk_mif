@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,7 +26,7 @@ public class Sponsor implements Serializable {
     @Getter @Setter
     private String name;
 
-    @OneToMany(mappedBy = "sponsor")
+    @OneToMany(mappedBy = "sponsor", fetch = FetchType.EAGER)
     @Getter @Setter
-    private List<Player> players;
+    private List<Player> players = new ArrayList<>();
 }
