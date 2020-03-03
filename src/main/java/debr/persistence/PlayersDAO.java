@@ -3,12 +3,12 @@ package debr.persistence;
 import debr.entities.Player;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 @ApplicationScoped
 public class PlayersDAO {
-    @PersistenceContext
+    @Inject
     private EntityManager em;
 
     public void persist(Player player){

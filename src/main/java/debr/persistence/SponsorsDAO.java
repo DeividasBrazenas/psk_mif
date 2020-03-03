@@ -1,17 +1,15 @@
 package debr.persistence;
 
 import debr.entities.Sponsor;
-import lombok.Setter;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @ApplicationScoped
 public class SponsorsDAO {
-    @PersistenceContext
-    @Setter
+    @Inject
     private EntityManager em;
 
     public List<Sponsor> loadAll(){

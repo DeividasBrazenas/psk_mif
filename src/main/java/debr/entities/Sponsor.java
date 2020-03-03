@@ -26,7 +26,7 @@ public class Sponsor implements Serializable {
     @Getter @Setter
     private String name;
 
-    @OneToMany(mappedBy = "sponsor", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sponsor")
     @Getter @Setter
     private List<Player> players = new ArrayList<>();
 }
