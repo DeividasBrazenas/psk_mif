@@ -30,7 +30,7 @@ public class Sponsors {
     @Transactional
     public String createSponsor(){
         this.sponsorsDAO.persist(sponsorToCreate);
-        return "success";
+        return "index?faces-redirect=true";
     }
 
     private void loadSponsors(){

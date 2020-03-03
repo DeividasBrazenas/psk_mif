@@ -40,6 +40,6 @@ public class PlayersForSponsor implements Serializable {
     public String createPlayer() {
         playerToCreate.setSponsor(this.sponsor);
         playersDAO.persist(playerToCreate);
-        return "/players.xhtml?faces-redirect=true&sponsorId=" + this.sponsor.getId();
+        return "/players?faces-redirect=true&sponsorId=" + this.sponsor.getId();
     }
 }
