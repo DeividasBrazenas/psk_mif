@@ -14,8 +14,10 @@
     </ol>
     <h:form>
         <h:inputText value="#{sponsorsMyBatis.sponsorToCreate.name}" required="true" />
+        <br/>
         <h:commandButton value="Add new sponsor" action="#{sponsorsMyBatis.createSponsor}" />
     </h:form>
+    <br/>
     <h:link value="Back to index" outcome="/index"/>
 </h:body>
 </html>

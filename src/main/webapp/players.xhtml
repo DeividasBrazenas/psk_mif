@@ -15,7 +15,9 @@
     </ol>
     <h:form>
         <h:inputText a:placeholder="First name" value="#{playersForSponsor.playerToCreate.firstName}" required="true" />
+        <br/>
         <h:inputText a:placeholder="Last name" value="#{playersForSponsor.playerToCreate.lastName}" required="true" />
+        <br/>
         <h:commandButton value="Add player to the sponsor" action="#{playersForSponsor.createPlayer}" >
             <f:param name="sponsorId" value="#{playersForSponsor.sponsor.id}" />
         </h:commandButton>
