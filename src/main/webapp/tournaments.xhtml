@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head/>
+<h:body>
+    <h2>Tournaments:</h2>
+    <ui:repeat value="#{tournaments.tournaments}" var="tournament">
+        <h:link value="#{tournament.name} (Id = #{tournament.id})"
+                outcome="tournamentDetails?tournamentId=#{tournament.id}"/>
+        <br/>
+    </ui:repeat>
+    <br/>
+    <h:form>
+        <h:inputText a:placeholder="Tournament" value="#{tournaments.tournamentToCreate.name}" required="true"/>
+        <br/>
+        <h:commandButton value="Add tournament" action="#{tournaments.createTournament}"/>
+    </h:form>
+</h:body>
+</html>

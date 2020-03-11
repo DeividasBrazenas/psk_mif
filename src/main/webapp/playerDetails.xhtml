@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head/>
+<h:body>
+    <h2>#{playerDetails.player.firstName} #{playerDetails.player.lastName}</h2>
+    <h2>Sponsor: #{playerDetails.player.sponsor.name}</h2>
+    <h:form>
+        <h:inputText a:placeholder="Sponsor Id" value="#{playerDetails.sponsorId}" required="true"/>
+        <br/>
+        <h:commandButton value="Add sponsor for player" action="#{playerDetails.addSponsorForPlayer}">
+            <f:param name="playerId" value="#{playerDetails.player.id}"/>
+        </h:commandButton>
+    </h:form>
+    <br/>
+    <h:link outcome="sponsors" value="All available sponsors"/>
+    <br/>
+
+    <h2>Tournament wins:</h2>
+    <ol>
+        <ui:repeat value="#{playerDetails.player.wins}" var="win">
+            <li>#{win.year} - #{win.tournament.name}</li>
+            <br/>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText a:placeholder="Tournament Id" value="#{playerDetails.tournamentId}" required="true"/>
+        <br/>
+        <h:inputText a:placeholder="Year won" value="#{playerDetails.yearWon}" required="true"/>
+        <br/>
+        <h:commandButton value="Add tournament win for player" action="#{playerDetails.addTournamentWinForPlayer}">
+            <f:param name="playerId" value="#{playerDetails.player.id}"/>
+        </h:commandButton>
+    </h:form>
+    <br/>
+    <h:link outcome="tournaments" value="All available tournaments"/>
+    <br/>
+    <br/>
+    <h:link outcome="index" value="Back to main page"/>
+</h:body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+
+<h:body>
+    <h2>#{sponsorDetails.sponsor.name}</h2>
+
+    <h2>Players playing for #{sponsorDetails.sponsor.name} sponsor:</h2>
+    <ui:repeat value="#{sponsorDetails.sponsor.players}" var="player">
+        <h:link value="#{player.firstName} #{player.lastName} (Id = #{player.id})"
+                outcome="playerDetails?playerId=#{player.id}"/>
+        <br/>
+    </ui:repeat>
+    <br/>
+    <h:form>
+        <h:inputText a:placeholder="Player Id" value="#{sponsorDetails.playerId}" required="true"/>
+        <br/>
+        <h:commandButton value="Add sponsor for player" action="#{sponsorDetails.addSponsorForPlayer}">
+            <f:param name="sponsorId" value="#{sponsorDetails.sponsor.id}"/>
+        </h:commandButton>
+    </h:form>
+    <h:link outcome="players" value="All players"/>
+    <br/>
+    <br/>
+    <h:link outcome="index" value="Back to main page"/>
+</h:body>
+</html>

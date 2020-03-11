@@ -2,25 +2,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 >
 <h:head/>
 
 <h:body>
-    <h2>Sponsors:</h2>
+    <h2>Tennis:</h2>
     <ol>
-        <ui:repeat value="#{sponsors.sponsors}" var="sponsor">
-            <li><h:link value="#{sponsor.name}" outcome="players?sponsorId=#{sponsor.id}"/></li>
-        </ui:repeat>
-    </ol>
-    <h:form>
-        <h:inputText value="#{sponsors.sponsorToCreate.name}" required="true"/>
+        <li><h:link value="Players" outcome="players"/></li>
         <br/>
-        <h:commandButton value="Add new sponsor" action="#{sponsors.createSponsor}"/>
-    </h:form>
-    <br/>
-    <h:link outcome="myBatis/sponsors" value="MyBatis implementation"/>
-    <br/>
-    <h:link outcome="index" value="Back to sponsors page"/>
+        <li><h:link value="Sponsors" outcome="sponsors"/></li>
+        <br/>
+        <li><h:link value="Tournaments" outcome="tournaments"/></li>
+    </ol>
 </h:body>
 </html>

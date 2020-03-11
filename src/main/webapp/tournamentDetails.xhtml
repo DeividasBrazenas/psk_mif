@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head/>
+<h:body>
+    <h2>#{tournamentDetails.tournament.name}</h2>
+    <h2>Tournament wins:</h2>
+    <ol>
+        <ui:repeat value="#{tournamentDetails.tournament.wins}" var="win">
+            <li>
+                <h:link value="#{win.year} - #{win.player.firstName} #{win.player.lastName}"
+                        outcome="playerDetails?playerId=#{win.player.id}"/>
+            </li>
+        </ui:repeat>
+    </ol>
+    <br/>
+    <h:form>
+        <h:inputText a:placeholder="Player Id" value="#{tournamentDetails.playerId}" required="true"/>
+        <br/>
+        <h:inputText a:placeholder="Year won" value="#{tournamentDetails.yearWon}" required="true"/>
+        <br/>
+        <h:commandButton value="Add tournament win for player" action="#{tournamentDetails.addTournamentWinForPlayer}">
+            <f:param name="tournamentId" value="#{tournamentDetails.tournament.id}"/>
+        </h:commandButton>
+    </h:form>
+    <br/>
+    <h:link outcome="players" value="All available players"/>
+    <br/>
+    <br/>
+    <h:link outcome="index" value="Back to main page"/>
+</h:body>
+</html>

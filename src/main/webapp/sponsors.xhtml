@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+
+<h:body>
+    <h3>Sponsors:</h3>
+    <ui:repeat value="#{sponsors.sponsors}" var="sponsor">
+        <h:link value="#{sponsor.name} (Id = #{sponsor.id})" outcome="sponsorDetails?sponsorId=#{sponsor.id}"/>
+        <br/>
+    </ui:repeat>
+    <br/>
+    <h:form>
+        <h:inputText value="#{sponsors.sponsorToCreate.name}" required="true"/>
+        <br/>
+        <h:commandButton value="Add new sponsor" action="#{sponsors.createSponsor}"/>
+    </h:form>
+    <br/>
+    <h:link outcome="myBatis/sponsors" value="MyBatis implementation"/>
+    <br/>
+    <br/>
+    <h:link outcome="index" value="Back to main page"/>
+</h:body>
+</html>
