@@ -21,6 +21,7 @@ public class Resources {
     private EntityManager createJTAEntityManager() {
         return entityManagerFactory.createEntityManager(SynchronizationType.SYNCHRONIZED);
     }
+
     private void closeDefaultEntityManager(@Disposes @Default EntityManager em) {
         em.close();
     }

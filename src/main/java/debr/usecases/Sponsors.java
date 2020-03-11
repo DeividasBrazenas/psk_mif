@@ -16,24 +16,25 @@ public class Sponsors {
     @Inject
     private SponsorsDAO sponsorsDAO;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private Sponsor sponsorToCreate = new Sponsor();
 
     @Getter
     private List<Sponsor> sponsors;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         loadSponsors();
     }
 
     @Transactional
-    public String createSponsor(){
+    public String createSponsor() {
         this.sponsorsDAO.persist(sponsorToCreate);
         return "index?faces-redirect=true";
     }
 
-    private void loadSponsors(){
+    private void loadSponsors() {
         this.sponsors = sponsorsDAO.loadAll();
     }
 }

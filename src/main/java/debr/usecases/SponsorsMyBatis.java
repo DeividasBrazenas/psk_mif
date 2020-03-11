@@ -19,7 +19,8 @@ public class SponsorsMyBatis {
     @Getter
     private List<Sponsor> sponsors;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private Sponsor sponsorToCreate = new Sponsor();
 
     @PostConstruct

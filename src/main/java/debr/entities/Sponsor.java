@@ -9,24 +9,28 @@ import java.util.List;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Sponsor.findAll", query = "select s from Sponsor as s")
+        @NamedQuery(name = "Sponsor.findAll", query = "select s from Sponsor as s"),
 })
 @Table(name = "SPONSOR")
-@Getter @Setter
-@EqualsAndHashCode(of={"id"})
+@Getter
+@Setter
+@EqualsAndHashCode(of = {"id"})
 public class Sponsor implements Serializable {
-    public Sponsor(){
+    public Sponsor() {
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter
+    @Getter
+    @Setter
     private Integer id;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private String name;
 
     @OneToMany(mappedBy = "sponsor")
-    @Getter @Setter
+    @Getter
+    @Setter
     private List<Player> players = new ArrayList<>();
 }

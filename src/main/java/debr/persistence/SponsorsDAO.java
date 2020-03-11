@@ -12,11 +12,11 @@ public class SponsorsDAO {
     @Inject
     private EntityManager em;
 
-    public List<Sponsor> loadAll(){
+    public List<Sponsor> loadAll() {
         return em.createNamedQuery("Sponsor.findAll", Sponsor.class).getResultList();
     }
 
-    public void persist(Sponsor sponsor){
+    public void persist(Sponsor sponsor) {
         this.em.persist(sponsor);
     }
 
