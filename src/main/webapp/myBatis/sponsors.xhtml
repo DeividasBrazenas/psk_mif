@@ -7,11 +7,10 @@
 <h:head/>
 <h:body>
     <h2>Sponsors:</h2>
-    <ol>
-        <ui:repeat value="#{sponsorsMyBatis.sponsors}" var="sponsor">
-            <li><h:link value="#{sponsor.name}" outcome="players?sponsorId=#{sponsor.id}" /></li>
-        </ui:repeat>
-    </ol>
+    <ui:repeat value="#{sponsorsMyBatis.sponsors}" var="sponsor">
+        <h:link value="#{sponsor.name} (Id = #{sponsor.id})" outcome="/sponsorDetails?sponsorId=#{sponsor.id}"/>
+        <br/>
+    </ui:repeat>
     <h:form>
         <h:inputText value="#{sponsorsMyBatis.sponsorToCreate.name}" required="true" />
         <br/>

@@ -31,7 +31,7 @@ public class Sponsors {
     @Transactional
     public String createSponsor() {
         this.sponsorsDAO.persist(sponsorToCreate);
-        return "index?faces-redirect=true";
+        return "sponsors?faces-redirect=true";
     }
 
     private void loadSponsors() {
