@@ -8,7 +8,7 @@
 <h:body>
     <h2>Sponsors:</h2>
     <ui:repeat value="#{sponsorsMyBatis.sponsors}" var="sponsor">
-        <h:link value="#{sponsor.name} (Id = #{sponsor.id})" outcome="/sponsorDetails?sponsorId=#{sponsor.id}"/>
+        <h:link value="#{sponsor.name} (Id = #{sponsor.id})" outcome="sponsorDetails?sponsorId=#{sponsor.id}"/>
         <br/>
     </ui:repeat>
     <h:form>
