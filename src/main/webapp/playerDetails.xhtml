@@ -17,8 +17,20 @@
             <f:param name="playerId" value="#{updatePlayerNickname.player.id}"/>
         </h:commandButton>
         <br/>
-        <h:outputText style="color: red" value="Nickname was already modified by other user. If you want to override it - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
+        <h:outputText style="color: red"
+                      value="Nickname was already modified by other user. If you want to override it - try again"
+                      rendered="#{param['error'] == 'optimistic-lock-exception'}"/>
     </h:form>
+
+    <br/>
+    <h:form>
+        <h:commandButton value="Generate player nick name?"
+                         disabled="#{generatePlayerNickname.nickNameGenerationRunning}"
+                         action="#{generatePlayerNickname.generateNickName}">
+            <f:param name="playerId" value="#{playerDetails.player.id}"/>
+        </h:commandButton>
+    </h:form>
+    <h:outputText value="#{generatePlayerNickname.getNickNameGenerationStatus()}"/>
 
     <h2>Sponsor: #{playerDetails.player.sponsor.name}</h2>
     <h:form>
