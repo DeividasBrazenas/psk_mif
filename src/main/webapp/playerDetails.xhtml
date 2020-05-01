@@ -8,6 +8,18 @@
 <h:head/>
 <h:body>
     <h2>#{playerDetails.player.firstName} #{playerDetails.player.lastName}</h2>
+
+    <h2>Nickname: #{playerDetails.player.nickName}</h2>
+    <h:form>
+        <h:inputText a:placeholder="Nickname" value="#{updatePlayerNickname.nickName}" required="true"/>
+        <br/>
+        <h:commandButton value="Set player's nickname" action="#{updatePlayerNickname.updatePlayerNickname}">
+            <f:param name="playerId" value="#{updatePlayerNickname.player.id}"/>
+        </h:commandButton>
+        <br/>
+        <h:outputText style="color: red" value="Nickname was already modified by other user. If you want to override it - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
+    </h:form>
+
     <h2>Sponsor: #{playerDetails.player.sponsor.name}</h2>
     <h:form>
         <h:inputText a:placeholder="Sponsor Id" value="#{playerDetails.sponsorId}" required="true"/>

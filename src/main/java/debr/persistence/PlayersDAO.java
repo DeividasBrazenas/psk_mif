@@ -23,4 +23,8 @@ public class PlayersDAO {
     public Player findOne(Integer id) {
         return em.find(Player.class, id);
     }
+
+    public Player update(Player player) {
+        return em.merge(player);
+    }
 }

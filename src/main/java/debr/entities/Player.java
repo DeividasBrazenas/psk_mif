@@ -34,6 +34,14 @@ public class Player implements Serializable {
     @Setter
     private String lastName;
 
+    @Getter
+    @Setter
+    private String nickName;
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
     @ManyToOne
     @JoinColumn(name = "SPONSOR_ID")
     @Getter
