@@ -1,6 +1,7 @@
 package debr.usecases;
 
 import debr.entities.Player;
+import debr.interceptors.LoggedInvocation;
 import debr.persistence.PlayersDAO;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,6 +42,7 @@ public class UpdatePlayerNickname implements Serializable {
     }
 
     @Transactional
+    @LoggedInvocation
     public String updatePlayerNickname() {
         player.setNickName(nickName);
 
