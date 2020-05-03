@@ -8,6 +8,8 @@ import debr.persistence.PlayersDAO;
 import debr.persistence.SponsorsDAO;
 import debr.persistence.TournamentWinsDAO;
 import debr.persistence.TournamentsDAO;
+import debr.services.Earnings.IEarningsGenerator;
+import debr.services.Earnings.Production;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,6 +36,10 @@ public class PlayerDetails implements Serializable {
 
     @Inject
     private TournamentWinsDAO tournamentWinsDAO;
+
+    @Inject
+    @Production
+    IEarningsGenerator earningsGenerator;
 
     @Getter
     private Player player;
@@ -84,5 +90,9 @@ public class PlayerDetails implements Serializable {
         tournamentWinsDAO.persist(tournamentWin);
 
         return "playerDetails?playerId=" + player.getId() + "&faces-redirect=true";
+    }
+
+    public String getEarnings() {
+        return earningsGenerator.generateEarnings();
     }
 }

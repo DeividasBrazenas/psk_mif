@@ -6,11 +6,12 @@
                       http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
         bean-discovery-mode="annotated">
 
-    <!--
      <alternatives>
-        <class>debr.services.AlternativeNickNameGenerator</class>
+      <!--
+      <class>debr.services.NickName.AlternativeNickNameGenerator</class>
+      -->
+         <class>debr.services.Earnings.MockEarningsGenerator</class>
     </alternatives>
-    -->
 
     <interceptors>
         <class>debr.interceptors.MethodLogger</class>

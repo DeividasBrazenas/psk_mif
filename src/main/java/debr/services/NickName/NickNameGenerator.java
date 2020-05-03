@@ -1,14 +1,18 @@
-package debr.services;
+package debr.services.NickName;
 
+import debr.services.Earnings.Production;
 import org.apache.deltaspike.core.api.future.Futureable;
 
 import javax.ejb.AsyncResult;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Default;
 import java.io.Serializable;
 import java.util.UUID;
 import java.util.concurrent.Future;
 
 @ApplicationScoped
+@Production
+@Default
 public class NickNameGenerator implements Serializable, INickNameGenerator {
     @Futureable
     public Future<String> generateNickName() {

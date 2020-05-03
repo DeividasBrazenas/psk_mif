@@ -1,4 +1,4 @@
-package debr.services;
+package debr.services.NickName;
 
 import org.apache.deltaspike.core.api.future.Futureable;
 

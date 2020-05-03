@@ -1,7 +1,8 @@
 package debr.usecases;
 
 import debr.interceptors.LoggedInvocation;
-import debr.services.INickNameGenerator;
+import debr.services.Earnings.Production;
+import debr.services.NickName.INickNameGenerator;
 
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
@@ -16,6 +17,7 @@ import java.util.concurrent.Future;
 @SessionScoped
 public class GeneratePlayerNickname implements Serializable {
     @Inject
+    @Production
     INickNameGenerator nickNameGenerator;
 
     private Future<String> nickNameGenerationTask = null;
@@ -26,7 +28,7 @@ public class GeneratePlayerNickname implements Serializable {
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         nickNameGenerationTask = nickNameGenerator.generateNickName();
 
-        return  "/playerDetails.xhtml?faces-redirect=true&playerId=" + requestParameters.get("playerId");
+        return "/playerDetails.xhtml?faces-redirect=true&playerId=" + requestParameters.get("playerId");
     }
 
     public boolean isNickNameGenerationRunning() {

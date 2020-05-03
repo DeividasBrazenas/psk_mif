@@ -32,6 +32,10 @@
     </h:form>
     <h:outputText value="#{generatePlayerNickname.getNickNameGenerationStatus()}"/>
 
+    <br/>
+    <h2>Earnings: </h2>
+    <h:outputText value="#{playerDetails.getEarnings()}"/>
+
     <h2>Sponsor: #{playerDetails.player.sponsor.name}</h2>
     <h:form>
         <h:inputText a:placeholder="Sponsor Id" value="#{playerDetails.sponsorId}" required="true"/>
