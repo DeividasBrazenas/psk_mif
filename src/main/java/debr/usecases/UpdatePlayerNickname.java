@@ -46,15 +46,19 @@ public class UpdatePlayerNickname implements Serializable {
     public String updatePlayerNickname() {
         player.setNickName(nickName);
 
-        try{
+        try {
             playersDAO.update(this.player);
         } catch (OptimisticLockException e) {
-            this.player = playersDAO.findOne(this.player.getId());
-            return "/playerDetails.xhtml?faces-redirect=true&playerId=" + player.getId() + "&error=optimistic-lock-exception";
-        } catch (Exception e){
-            System.out.println("blogai");
+            return handleOptimisticLockException();
         }
 
         return "playerDetails?playerId=" + player.getId() + "&faces-redirect=true";
+    }
+
+    @Transactional(Transactional.TxType.REQUIRES_NEW)
+    @LoggedInvocation
+    public String handleOptimisticLockException() {
+        this.player = playersDAO.findOne(this.player.getId());
+        return "/playerDetails.xhtml?faces-redirect=true&playerId=" + player.getId() + "&error=optimistic-lock-exception";
     }
 }
